@@ -10,6 +10,8 @@ import './style.css'
 
 function SalesCard() {
 
+    
+
     const min = new Date(new Date().setDate(new Date().getDate() - 365));
     const max = new Date();
     const [minDate, setMinDate] = useState(min);
@@ -19,8 +21,8 @@ function SalesCard() {
 
     useEffect(() => {
 
-        const dmin = minDate.toISOString().slice(0,10);
-        const dmax = maxDate.toISOString().slice(0,10);
+        const dmin = minDate.toISOString().slice(0, 10);
+        const dmax = maxDate.toISOString().slice(0, 10);
 
 
         axios.get(`${BASE_URL}/sales?minDate=${dmin}&maxDate=${dmax}`)
